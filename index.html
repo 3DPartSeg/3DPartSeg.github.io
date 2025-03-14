@@ -211,15 +211,13 @@ x
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Method: Search - Localize</h2>
+        <h2 class="title is-3">Method: OpenPart3D</h2>
         <div class="content has-text-justified">
     <div class="hero-body">
       <center>
-        <img src="./src/3dpart_arch2.png" alt="empty">
+        <img src="./src/3dpart_arch3.png" alt="empty">
     <center>
-        <p>
-          We propose a two-stages strategy, consisting of an “instance search” stage followed by a “part segmentation” stage. In the first stage: The input 3D point cloud is processed through a 3D model to generate candidate 3D mask proposals. A vision-language model is then employed to localize target objects according to the text query on the rendered images of the scene. Subsequently, the relevant 3D-instance are identified by correlating the 2D detections with the 3D point cloud. In the second stage: The vision-language model further refines the detection of individual parts by applying the text query to images focused on object-level views. The SAM2 model is then used to generate highly precise 2D part masks, using the previous detections as box prompts. These refined 2D part masks are subsequently projected onto the 3D scene, leveraging the correspondence between 2D pixels and 3D points. A more detailed method diagram is provided in the appendix.        </p>
-    </div>
+        <p> First, the Room-Tour Snap Module captures multiple view images of the 3D scene by strategically positioning cameras at optimized locations and orientations. These images are then processed by a 2D open-vocabulary model to generate 2D part masks corresponding to the given text query. Subsequently, the View-Weighted 3D-Part Grouping Module integrates these 2D part masks across multiple views, assigning adaptive weights to each view, to extract geometrically consistent regions from the scene’s point cloud and aggregate them into precise 3D parts    </div>
   </div>
       </div>
       </div>
